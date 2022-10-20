@@ -17,23 +17,29 @@
     <div id="map_canvas"></div>
     <script>
     function initMap() {
-      function initMap() {
       var myOptions = {
-        zoom: 16,
-        center: {lat: 35.72290750217049, lng: 139.46210807795433},
+        zoom: 8,
+        center: {lat: 53.480759, lng: -2.242631},
         mapTypeId: google.maps.MapTypeId.TERRAIN,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+        // Step 4. Customize displayed controls
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true
       }
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    }
-      
+
+      // Step 2. Add custom icon
+
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
       var marker = new google.maps.Marker({
-        position: {lat: 35.72290750217049, lng: 139.46210807795433},
+        position: {lat: 53.480759, lng: -2.242631},
         icon: iconBase + 'flag_maps.png',
         map: map
       });
+
+      // Step 3. Add info window
 
       var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Custom info window</h2><p>This is a cool custom info window.</p></div>';
 
@@ -46,7 +52,7 @@
       });
     }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdr20upf4VRGoXyn4DTRB0vNAvTj2O44M&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
     async defer></script>
   </body>
 </html>
